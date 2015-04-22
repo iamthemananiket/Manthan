@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+   
+	<div class="footer">
+		<ul>
+			<li><a href="aboutUs.php">About Manthan Trust</a></li>
+			<li><a href="deliveryPolicy.php">Delivery Policy</a></li>
+			<li><a href="privacyPolicy.php">Privacy Policy</a></li>
+			<li><a href="termsAndConditions.php">Terms and Conditions</a></li>
+			<li><a href="contactUs.php">Contact Us</a></li>
+		</ul>
+		<div class="copyright"><hr>Copyright 2015 <a href="http://www.manthantrust.com" target="_blank">Manthantrust.com</a> All Rights Reserved</div>
+	</div>
+	
+</body>
+
+
+	<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('.myMenu > li').bind('mouseover', openSubMenu);
+			$('.myMenu > li').bind('mouseout', closeSubMenu);
+			
+			function openSubMenu() {
+				$(this).find('ul').css('visibility', 'visible');	
+			};
+			
+			function closeSubMenu() {
+				$(this).find('ul').css('visibility', 'hidden');	
+			};
+					   
+		});
+	</script>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<meta charset="utf-8">
+
+	<title>Manthan</title>
+	
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+
+	<link rel="stylesheet" type="text/css" href="css/dropdown.css">
+	<link rel="stylesheet" type="text/css" href="css/carousel.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+</head>
+
+<body>
+
+	<div class="header">
+		<ul>
+			<li id="emailDisplay"><?php echo getCustEmail(); ?></li>
+			<li><a href="logout.php">Logout</a></li>
+			<li><a href="contactUs.php">Contact Us</a></li>
+		</ul>
+	</div>
+
+	<div class="topNav">
+		<ul><span class="left">
+			<li class="logo"><a href="index.php">manthan</a></li>
+				<li>
+					<ul class="myMenu">
+						<li><a href="#" style="padding-top: 2px; margin-top: -16px; font-size: 18px;">Shop</a>
+							<ul style="z-index: 2;">
+								<?php
+									$getCategoryNames = "SELECT `Category_name` FROM `category`;";
+									$count = mysql_num_rows(mysql_query($getCategoryNames));
+									for ($i = 0; $i < $count; $i++) { 
+										$category = mysql_result(mysql_query($getCategoryNames), $i);
+										?><li><a href=<?php echo '"' . 'productSearchResult.php?search=' . $category . '&sort=sortById"'; ?>><?php echo $category; ?></a></li><?php
+									}
+								?>
+						    </ul>
+						</li>
+					</ul>
+				</li>
+			<li>
+			<form action="productSearchResult.php" method="get" style="padding-top: 1px;">
+				<input type="text" name="search" placeholder="Search Product..." required>
+				<input type="hidden" name="sort" value="sortById">
+				<input type="submit" value="Search" style="padding: 2px 8px;">
+			</form>
+		</li>
+		</ul>
+		</ul></span>
+		<span class="right">
+			<p><a href="cart.php">Shopping Cart (0)</a></p>
+		</span>
+	</div>
+
+
+</body>
+
+</html>

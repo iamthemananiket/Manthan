@@ -1,0 +1,52 @@
+/*style the main menu*/
+.myMenu {
+	margin:0;
+	padding: 0;
+}
+
+.myMenu li {
+	list-style:none;
+	float:left;
+}
+
+.myMenu li a:link, .myMenu li a:visited {
+	display:block;
+	text-decoration:none;
+	background-color:#F7F7F7;
+	padding:0.5em 2em;
+	margin:0;
+}
+
+.myMenu li a:hover {
+	background-color:#E2E2E2;
+}
+
+/*style the sub menu*/
+.myMenu li ul {
+	position:absolute;
+	visibility:hidden;
+	border:1px solid rgb(0, 0, 0);
+	padding:0;
+	line-height:5px;
+	background-color:#F7F7F7;
+}
+
+.myMenu li ul li {
+	display:inline;
+	float:none;
+}
+
+.myMenu li ul li a {
+	border-top: 1px solid rgb(0, 0, 0);
+	border-bottom: 1px solid rgb(0, 0, 0);
+}
+
+.myMenu li ul li:link, .myMenu li ul li:visited {
+	background-color:#F7F7F7;
+	width:auto;
+}
+
+.myMenu li ul li a:hover {
+	background-color:#E2E2E2;
+	color: rgb(0, 0, 0);
+}
